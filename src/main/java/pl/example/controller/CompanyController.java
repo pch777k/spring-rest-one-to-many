@@ -2,7 +2,6 @@ package pl.example.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +20,12 @@ import pl.example.service.CompanyService;
 @RestController
 public class CompanyController {
 
-	@Autowired
 	private CompanyService companyService;
 	
+	public CompanyController(CompanyService companyService) {
+		this.companyService = companyService;
+	}
+
 	@GetMapping
 	public List<Company> getAllCompanies(){
 		return companyService.getCompanies();

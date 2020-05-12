@@ -1,6 +1,5 @@
 package pl.example.controller;
 
-
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +28,7 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 		this.companyService = companyService;
 	}
+	
 	@GetMapping("employees")
 	public List<Employee> getEmployees() {	
 		return employeeService.getEmployees();
